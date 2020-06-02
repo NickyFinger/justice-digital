@@ -16,18 +16,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@justice-digital/ui-shared": ["libs/ui-shared/src/index.ts"],
-      "@justice-digital/ui-adjournments": ["libs/ui-adjournments/src/index.ts"],
-      "@justice-digital/ui-filing": ["libs/ui-filing/src/index.ts"],
-      "@justice-digital/data-access-shared": [
-        "libs/data-access-shared/src/index.ts"
-      ],
-      "@justice-digital/data-access-adjournments": [
+      "@jd/ui-shared": ["libs/ui-shared/src/index.ts"],
+      "@jd/ui-adjournments": ["libs/ui-adjournments/src/index.ts"],
+      "@jd/ui-filing": ["libs/ui-filing/src/index.ts"],
+      "@jd/data-access-shared": ["libs/data-access-shared/src/index.ts"],
+      "@jd/data-access-adjournments": [
         "libs/data-access-adjournments/src/index.ts"
       ],
-      "@justice-digital/data-access-filing": [
-        "libs/data-access-filing/src/index.ts"
-      ]
+      "@jd/data-access-filing": ["libs/data-access-filing/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
