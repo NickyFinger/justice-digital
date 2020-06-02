@@ -1,0 +1,567 @@
+{
+  "version": 1,
+  "projects": {
+    "myapp": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/myapp",
+      "sourceRoot": "apps/myapp/src",
+      "prefix": "justice-digital",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/myapp",
+            "index": "apps/myapp/src/index.html",
+            "main": "apps/myapp/src/main.ts",
+            "polyfills": "apps/myapp/src/polyfills.ts",
+            "tsConfig": "apps/myapp/tsconfig.app.json",
+            "aot": true,
+            "assets": ["apps/myapp/src/favicon.ico", "apps/myapp/src/assets"],
+            "styles": ["apps/myapp/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/myapp/src/environments/environment.ts",
+                  "with": "apps/myapp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "myapp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "myapp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "myapp:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/myapp/tsconfig.app.json",
+              "apps/myapp/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/myapp/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/myapp/jest.config.js",
+            "tsConfig": "apps/myapp/tsconfig.spec.json",
+            "setupFile": "apps/myapp/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "myapp-e2e": {
+      "root": "apps/myapp-e2e",
+      "sourceRoot": "apps/myapp-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/myapp-e2e/cypress.json",
+            "tsConfig": "apps/myapp-e2e/tsconfig.e2e.json",
+            "devServerTarget": "myapp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "myapp:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/myapp-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/myapp-e2e/**"]
+          }
+        }
+      }
+    },
+    "filing": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/filing",
+      "sourceRoot": "apps/filing/src",
+      "prefix": "justice-digital",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/filing",
+            "index": "apps/filing/src/index.html",
+            "main": "apps/filing/src/main.ts",
+            "polyfills": "apps/filing/src/polyfills.ts",
+            "tsConfig": "apps/filing/tsconfig.app.json",
+            "aot": true,
+            "assets": ["apps/filing/src/favicon.ico", "apps/filing/src/assets"],
+            "styles": ["apps/filing/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/filing/src/environments/environment.ts",
+                  "with": "apps/filing/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "filing:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "filing:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "filing:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/filing/tsconfig.app.json",
+              "apps/filing/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/filing/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/filing/jest.config.js",
+            "tsConfig": "apps/filing/tsconfig.spec.json",
+            "setupFile": "apps/filing/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "filing-e2e": {
+      "root": "apps/filing-e2e",
+      "sourceRoot": "apps/filing-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/filing-e2e/cypress.json",
+            "tsConfig": "apps/filing-e2e/tsconfig.e2e.json",
+            "devServerTarget": "filing:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "filing:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/filing-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/filing-e2e/**"]
+          }
+        }
+      }
+    },
+    "adjournments": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/adjournments",
+      "sourceRoot": "apps/adjournments/src",
+      "prefix": "justice-digital",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/adjournments",
+            "index": "apps/adjournments/src/index.html",
+            "main": "apps/adjournments/src/main.ts",
+            "polyfills": "apps/adjournments/src/polyfills.ts",
+            "tsConfig": "apps/adjournments/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/adjournments/src/favicon.ico",
+              "apps/adjournments/src/assets"
+            ],
+            "styles": ["apps/adjournments/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/adjournments/src/environments/environment.ts",
+                  "with": "apps/adjournments/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "adjournments:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "adjournments:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "adjournments:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/adjournments/tsconfig.app.json",
+              "apps/adjournments/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/adjournments/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/adjournments/jest.config.js",
+            "tsConfig": "apps/adjournments/tsconfig.spec.json",
+            "setupFile": "apps/adjournments/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "adjournments-e2e": {
+      "root": "apps/adjournments-e2e",
+      "sourceRoot": "apps/adjournments-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/adjournments-e2e/cypress.json",
+            "tsConfig": "apps/adjournments-e2e/tsconfig.e2e.json",
+            "devServerTarget": "adjournments:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "adjournments:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/adjournments-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/adjournments-e2e/**"]
+          }
+        }
+      }
+    },
+    "ui-shared": {
+      "projectType": "library",
+      "root": "libs/ui-shared",
+      "sourceRoot": "libs/ui-shared/src",
+      "prefix": "justice-digital",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-shared/tsconfig.lib.json",
+              "libs/ui-shared/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-shared/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-shared/jest.config.js",
+            "tsConfig": "libs/ui-shared/tsconfig.spec.json",
+            "setupFile": "libs/ui-shared/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-adjournments": {
+      "projectType": "library",
+      "root": "libs/ui-adjournments",
+      "sourceRoot": "libs/ui-adjournments/src",
+      "prefix": "justice-digital",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-adjournments/tsconfig.lib.json",
+              "libs/ui-adjournments/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-adjournments/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-adjournments/jest.config.js",
+            "tsConfig": "libs/ui-adjournments/tsconfig.spec.json",
+            "setupFile": "libs/ui-adjournments/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-filing": {
+      "projectType": "library",
+      "root": "libs/ui-filing",
+      "sourceRoot": "libs/ui-filing/src",
+      "prefix": "justice-digital",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-filing/tsconfig.lib.json",
+              "libs/ui-filing/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-filing/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-filing/jest.config.js",
+            "tsConfig": "libs/ui-filing/tsconfig.spec.json",
+            "setupFile": "libs/ui-filing/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "data-access-shared": {
+      "projectType": "library",
+      "root": "libs/data-access-shared",
+      "sourceRoot": "libs/data-access-shared/src",
+      "prefix": "justice-digital",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/data-access-shared/tsconfig.lib.json",
+              "libs/data-access-shared/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/data-access-shared/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/data-access-shared/jest.config.js",
+            "tsConfig": "libs/data-access-shared/tsconfig.spec.json",
+            "setupFile": "libs/data-access-shared/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "data-access-adjournments": {
+      "projectType": "library",
+      "root": "libs/data-access-adjournments",
+      "sourceRoot": "libs/data-access-adjournments/src",
+      "prefix": "justice-digital",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/data-access-adjournments/tsconfig.lib.json",
+              "libs/data-access-adjournments/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/data-access-adjournments/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/data-access-adjournments/jest.config.js",
+            "tsConfig": "libs/data-access-adjournments/tsconfig.spec.json",
+            "setupFile": "libs/data-access-adjournments/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "data-access-filing": {
+      "projectType": "library",
+      "root": "libs/data-access-filing",
+      "sourceRoot": "libs/data-access-filing/src",
+      "prefix": "justice-digital",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/data-access-filing/tsconfig.lib.json",
+              "libs/data-access-filing/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/data-access-filing/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/data-access-filing/jest.config.js",
+            "tsConfig": "libs/data-access-filing/tsconfig.spec.json",
+            "setupFile": "libs/data-access-filing/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "myapp"
+}

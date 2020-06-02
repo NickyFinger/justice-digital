@@ -1,0 +1,62 @@
+{
+  "npmScope": "justice-digital",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "myapp": {
+      "tags": []
+    },
+    "myapp-e2e": {
+      "tags": [],
+      "implicitDependencies": ["myapp"]
+    },
+    "filing": {
+      "tags": []
+    },
+    "filing-e2e": {
+      "tags": [],
+      "implicitDependencies": ["filing"]
+    },
+    "adjournments": {
+      "tags": []
+    },
+    "adjournments-e2e": {
+      "tags": [],
+      "implicitDependencies": ["adjournments"]
+    },
+    "ui-shared": {
+      "tags": []
+    },
+    "ui-adjournments": {
+      "tags": []
+    },
+    "ui-filing": {
+      "tags": []
+    },
+    "data-access-shared": {
+      "tags": []
+    },
+    "data-access-adjournments": {
+      "tags": []
+    },
+    "data-access-filing": {
+      "tags": []
+    }
+  }
+}

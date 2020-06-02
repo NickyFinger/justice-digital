@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@justice-digital/ui-shared": ["libs/ui-shared/src/index.ts"],
+      "@justice-digital/ui-adjournments": ["libs/ui-adjournments/src/index.ts"],
+      "@justice-digital/ui-filing": ["libs/ui-filing/src/index.ts"],
+      "@justice-digital/data-access-shared": [
+        "libs/data-access-shared/src/index.ts"
+      ],
+      "@justice-digital/data-access-adjournments": [
+        "libs/data-access-adjournments/src/index.ts"
+      ],
+      "@justice-digital/data-access-filing": [
+        "libs/data-access-filing/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
