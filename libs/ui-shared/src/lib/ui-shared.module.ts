@@ -6,5 +6,6 @@ import { SelectComponent } from './select/select.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [InputComponent, SelectComponent],
+  exports: [InputComponent, SelectComponent],
 })
 export class UiSharedModule {}

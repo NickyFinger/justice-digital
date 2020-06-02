@@ -88,7 +88,8 @@
           "options": {
             "jestConfig": "apps/filing/jest.config.js",
             "tsConfig": "apps/filing/tsconfig.spec.json",
-            "setupFile": "apps/filing/src/test-setup.ts"
+            "setupFile": "apps/filing/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       }
@@ -210,7 +211,8 @@
           "options": {
             "jestConfig": "apps/adjournments/jest.config.js",
             "tsConfig": "apps/adjournments/tsconfig.spec.json",
-            "setupFile": "apps/adjournments/src/test-setup.ts"
+            "setupFile": "apps/adjournments/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       }
@@ -263,7 +265,8 @@
           "options": {
             "jestConfig": "libs/ui-shared/jest.config.js",
             "tsConfig": "libs/ui-shared/tsconfig.spec.json",
-            "setupFile": "libs/ui-shared/src/test-setup.ts"
+            "setupFile": "libs/ui-shared/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -294,7 +297,8 @@
           "options": {
             "jestConfig": "libs/ui-adjournments/jest.config.js",
             "tsConfig": "libs/ui-adjournments/tsconfig.spec.json",
-            "setupFile": "libs/ui-adjournments/src/test-setup.ts"
+            "setupFile": "libs/ui-adjournments/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -325,7 +329,8 @@
           "options": {
             "jestConfig": "libs/ui-filing/jest.config.js",
             "tsConfig": "libs/ui-filing/tsconfig.spec.json",
-            "setupFile": "libs/ui-filing/src/test-setup.ts"
+            "setupFile": "libs/ui-filing/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -356,7 +361,8 @@
           "options": {
             "jestConfig": "libs/data-access-shared/jest.config.js",
             "tsConfig": "libs/data-access-shared/tsconfig.spec.json",
-            "setupFile": "libs/data-access-shared/src/test-setup.ts"
+            "setupFile": "libs/data-access-shared/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -390,7 +396,8 @@
           "options": {
             "jestConfig": "libs/data-access-adjournments/jest.config.js",
             "tsConfig": "libs/data-access-adjournments/tsconfig.spec.json",
-            "setupFile": "libs/data-access-adjournments/src/test-setup.ts"
+            "setupFile": "libs/data-access-adjournments/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -421,7 +428,8 @@
           "options": {
             "jestConfig": "libs/data-access-filing/jest.config.js",
             "tsConfig": "libs/data-access-filing/tsconfig.spec.json",
-            "setupFile": "libs/data-access-filing/src/test-setup.ts"
+            "setupFile": "libs/data-access-filing/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -444,5 +452,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "myapp"
+  "defaultProject": "filing"
 }
