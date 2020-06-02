@@ -1,125 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "myapp": {
-      "projectType": "application",
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "apps/myapp",
-      "sourceRoot": "apps/myapp/src",
-      "prefix": "justice-digital",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/myapp",
-            "index": "apps/myapp/src/index.html",
-            "main": "apps/myapp/src/main.ts",
-            "polyfills": "apps/myapp/src/polyfills.ts",
-            "tsConfig": "apps/myapp/tsconfig.app.json",
-            "aot": true,
-            "assets": ["apps/myapp/src/favicon.ico", "apps/myapp/src/assets"],
-            "styles": ["apps/myapp/src/styles.scss"],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/myapp/src/environments/environment.ts",
-                  "with": "apps/myapp/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "myapp:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "myapp:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "myapp:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/myapp/tsconfig.app.json",
-              "apps/myapp/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/myapp/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/myapp/jest.config.js",
-            "tsConfig": "apps/myapp/tsconfig.spec.json",
-            "setupFile": "apps/myapp/src/test-setup.ts"
-          }
-        }
-      }
-    },
-    "myapp-e2e": {
-      "root": "apps/myapp-e2e",
-      "sourceRoot": "apps/myapp-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/myapp-e2e/cypress.json",
-            "tsConfig": "apps/myapp-e2e/tsconfig.e2e.json",
-            "devServerTarget": "myapp:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "myapp:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["apps/myapp-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/myapp-e2e/**"]
-          }
-        }
-      }
-    },
     "filing": {
       "projectType": "application",
       "schematics": {
@@ -129,7 +10,7 @@
       },
       "root": "apps/filing",
       "sourceRoot": "apps/filing/src",
-      "prefix": "justice-digital",
+      "prefix": "jd",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -248,7 +129,7 @@
       },
       "root": "apps/adjournments",
       "sourceRoot": "apps/adjournments/src",
-      "prefix": "justice-digital",
+      "prefix": "jd",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -365,7 +246,7 @@
       "projectType": "library",
       "root": "libs/ui-shared",
       "sourceRoot": "libs/ui-shared/src",
-      "prefix": "justice-digital",
+      "prefix": "jd",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -396,7 +277,7 @@
       "projectType": "library",
       "root": "libs/ui-adjournments",
       "sourceRoot": "libs/ui-adjournments/src",
-      "prefix": "justice-digital",
+      "prefix": "jd",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -427,7 +308,7 @@
       "projectType": "library",
       "root": "libs/ui-filing",
       "sourceRoot": "libs/ui-filing/src",
-      "prefix": "justice-digital",
+      "prefix": "jd",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -458,7 +339,7 @@
       "projectType": "library",
       "root": "libs/data-access-shared",
       "sourceRoot": "libs/data-access-shared/src",
-      "prefix": "justice-digital",
+      "prefix": "jd",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -489,7 +370,7 @@
       "projectType": "library",
       "root": "libs/data-access-adjournments",
       "sourceRoot": "libs/data-access-adjournments/src",
-      "prefix": "justice-digital",
+      "prefix": "jd",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -523,7 +404,7 @@
       "projectType": "library",
       "root": "libs/data-access-filing",
       "sourceRoot": "libs/data-access-filing/src",
-      "prefix": "justice-digital",
+      "prefix": "jd",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
