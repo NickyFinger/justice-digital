@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs/internal/observable/of';
 
 @Component({
     selector: 'jd-input',
@@ -13,5 +14,7 @@ export class InputComponent implements OnInit {
             'fdsfs fsdfsd fsdf sdf sdf sdf' +
             'sdf sdf sdf sdf sdf sdf sdf sdf sdf sdf sdf sdf sdf sd fsd fsd fsd fsd f sf sd fsd fsd' +
             'f sdf sdf sfgsdf gsf gfsd gfd gfd gdfgfdg dfgfd gfsd  sd fs fsd f sdf sd f';
+
+        var blah = of(null);
     }
 }
